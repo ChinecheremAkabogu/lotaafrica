@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Project form submissions go through the `submitProject` server function (`src/lib/submissions.functions.ts`): insert into `project_submissions` first, then forward to the company inbox via the FormSubmit AJAX relay — storage first so no lead is lost if the relay fails.
+- Form fields and option lists live in `src/lib/project-schema.ts` and are shared by the client form and the server validator, so both always agree.
+- Marketing sections are reusable components in `src/components/site/`; each nav item is its own route file so pages get unique head metadata.

@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as StartAProjectRouteImport } from './routes/start-a-project'
+import { Route as WhatWeDoRouteImport } from './routes/what-we-do'
+import { Route as WhyLotaRouteImport } from './routes/why-lota'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StartAProjectRoute = StartAProjectRouteImport.update({
+  id: '/start-a-project',
+  path: '/start-a-project',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatWeDoRoute = WhatWeDoRouteImport.update({
+  id: '/what-we-do',
+  path: '/what-we-do',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyLotaRoute = WhyLotaRouteImport.update({
+  id: '/why-lota',
+  path: '/why-lota',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/faqs': typeof FaqsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/start-a-project': typeof StartAProjectRoute
+  '/what-we-do': typeof WhatWeDoRoute
+  '/why-lota': typeof WhyLotaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/faqs': typeof FaqsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/start-a-project': typeof StartAProjectRoute
+  '/what-we-do': typeof WhatWeDoRoute
+  '/why-lota': typeof WhyLotaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/faqs': typeof FaqsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/start-a-project': typeof StartAProjectRoute
+  '/what-we-do': typeof WhatWeDoRoute
+  '/why-lota': typeof WhyLotaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/faqs'
+    | '/how-it-works'
+    | '/start-a-project'
+    | '/what-we-do'
+    | '/why-lota'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/faqs'
+    | '/how-it-works'
+    | '/start-a-project'
+    | '/what-we-do'
+    | '/why-lota'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/faqs'
+    | '/how-it-works'
+    | '/start-a-project'
+    | '/what-we-do'
+    | '/why-lota'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  FaqsRoute: typeof FaqsRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  StartAProjectRoute: typeof StartAProjectRoute
+  WhatWeDoRoute: typeof WhatWeDoRoute
+  WhyLotaRoute: typeof WhyLotaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/start-a-project': {
+      id: '/start-a-project'
+      path: '/start-a-project'
+      fullPath: '/start-a-project'
+      preLoaderRoute: typeof StartAProjectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-we-do': {
+      id: '/what-we-do'
+      path: '/what-we-do'
+      fullPath: '/what-we-do'
+      preLoaderRoute: typeof WhatWeDoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-lota': {
+      id: '/why-lota'
+      path: '/why-lota'
+      fullPath: '/why-lota'
+      preLoaderRoute: typeof WhyLotaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  FaqsRoute: FaqsRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  StartAProjectRoute: StartAProjectRoute,
+  WhatWeDoRoute: WhatWeDoRoute,
+  WhyLotaRoute: WhyLotaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

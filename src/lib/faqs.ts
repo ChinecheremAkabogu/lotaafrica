@@ -1,0 +1,14 @@
+export const FAQS = [
+  { q: "What exactly is Lota Africa?", a: "Lota Africa is a project execution and asset acquisition platform being built to help Africans in the diaspora execute personal and business projects back home. This includes property acquisition, home construction, vehicle purchases, business setup and more." },
+  { q: "Who can use Lota?", a: "Lota is being designed primarily for Africans living abroad who want to execute projects in their home countries. Whether you live in the UK, US, Canada, Europe or elsewhere, you can submit a project to get started." },
+  { q: "What types of projects can I submit?", a: "You can submit almost any legitimate personal or business project. This includes building a house, purchasing land, acquiring a vehicle, opening a restaurant, setting up a gym, managing an existing business and other projects." },
+  { q: "Do I need to have a detailed project plan before submitting?", a: "No. You only need an idea of what you want to achieve. We can explore the requirements, scope, budget and execution approach with you." },
+  { q: "How do you verify vendors and project managers?", a: "Our approach includes identity, business and relevant professional checks, reference reviews and other due diligence appropriate to the service being provided. Verification will be an ongoing process, not simply a one-time badge." },
+  { q: "How will my money be protected?", a: "We are developing a milestone-based funding and escrow structure intended to make project payments more accountable. The specific arrangements, safeguards and payment terms will be explained before any project funding is accepted." },
+  { q: "Will I receive updates about my project?", a: "Our platform is being designed to provide regular project updates, visual evidence, progress reports, receipts and relevant documentation so that project owners can follow execution remotely." },
+  { q: "Can I track my project from abroad?", a: "Yes. Remote project visibility is a central part of the Lota experience we are building." },
+  { q: "Does submitting a project mean I have to pay immediately?", a: "No. Submitting an initial project enquiry does not commit you to funding or executing a project. You'll first have an opportunity to discuss your requirements and understand the proposed approach." },
+  { q: "Can I submit more than one project?", a: "Absolutely. You can submit separate projects for different needs, locations or investments." },
+  { q: "Which countries does Lota operate in?", a: "Our initial focus is on building a reliable execution network in Nigeria, with the ambition to expand across Africa. Availability will depend on the project location and the services supported at the time of enquiry." },
+  { q: "How do I get started?", a: "Simply complete the project submission form. It takes approximately two minutes, and our team can follow up to understand your plans." },
+];
