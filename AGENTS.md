@@ -31,6 +31,6 @@ use the editor.
 
 ## Project rules
 
-- Project form submissions are stored by the `submitProject` server function first, then the browser forwards them to the company inbox via the FormSubmit AJAX relay (`src/lib/email-relay.ts`) — storage first so no lead is lost if the relay fails, and the relay runs client-side because FormSubmit ties activation to the real site origin.
+- Project form submissions are stored by the `submitProject` server function first, then emailed server-side to the company inbox through the linked Gmail connector (`src/lib/gmail-notify.server.ts`); an email failure is logged, not shown to the visitor — storage first so no lead is lost.
 - Form fields and option lists live in `src/lib/project-schema.ts` and are shared by the client form and the server validator, so both always agree.
 - Marketing sections are reusable components in `src/components/site/`; each nav item is its own route file so pages get unique head metadata.

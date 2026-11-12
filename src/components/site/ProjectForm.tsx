@@ -18,7 +18,6 @@ import {
   type ProjectSubmission,
 } from "@/lib/project-schema";
 import { submitProject } from "@/lib/submissions.functions";
-import { emailSubmissionToLota } from "@/lib/email-relay";
 import { LOTA_EMAIL, LOTA_TAGLINE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -111,9 +110,7 @@ export function ProjectForm() {
   const onSubmit = async (values: ProjectSubmission) => {
     setServerError(null);
     try {
-      const { id } = await submit({ data: values });
-      // Saved — now forward to the Lota inbox without making the visitor wait.
-      void emailSubmissionToLota(values, id);
+      await submit({ data: values });
       setDone(true);
       window.scrollTo({ top: document.getElementById("project-form")?.offsetTop ?? 0, behavior: "smooth" });
     } catch (e) {
