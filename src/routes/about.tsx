@@ -5,7 +5,7 @@ import { Vision } from "@/components/site/Vision";
 import { FinalCta } from "@/components/site/FinalCta";
 import { pageMeta } from "@/lib/seo";
 import familyImg from "@/assets/family-home.jpg";
-import logoFull from "@/assets/lota-logo-full.png.asset.json";
+import logoFull from "@/assets/lota-logo-full.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -58,7 +58,7 @@ function About() {
           </div>
           <div className="lg:col-span-5">
             <div className="reveal sticky top-36 rounded-[2rem] border border-border bg-card p-10 text-center shadow-soft">
-              <img src={logoFull.url} alt="Lota Africa — Your plans back home. In safe hands." width={900} height={626} loading="lazy" className="mx-auto w-full max-w-sm" />
+              <img src={logoFull} alt="Lota Africa — Your plans back home. In safe hands." width={1024} height={634} loading="lazy" className="mx-auto w-full max-w-sm" />
               <p className="mt-8 font-serif text-3xl italic">Lota. A better way to build back home.</p>
             </div>
           </div>

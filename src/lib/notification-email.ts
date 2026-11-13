@@ -56,6 +56,7 @@ export function buildNotificationEmail(values: ProjectSubmission, reference: str
     to,
     replyTo,
     subject,
+    html,
     raw: b64(message).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""),
   };
 }
