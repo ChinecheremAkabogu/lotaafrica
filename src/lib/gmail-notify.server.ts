@@ -20,13 +20,19 @@ async function sendViaGmailSmtp(values: ProjectSubmission, reference: string, us
     secure: true,
     auth: { user, pass },
   });
-  await transport.sendMail({
-    from: user,
-    to: email.to,
-    replyTo: { name: values.fullName.replace(/[\r\n]+/g, " ").trim(), address: email.replyTo },
-    subject: email.subject,
-    html: email.html,
-  });
+  try {
+    await transport.sendMail({
+      from: user,
+      to: email.to,
+      replyTo: { name: values.fullName.replace(/[\r\n]+/g, " ").trim(), address: email.replyTo },
+      subject: email.subject,
+      html: email.html,
+    });
+  } catch (error) {
+    const code = typeof error === "object" && error && "code" in error ? String(error.code) : "connection";
+    const detail = error instanceof Error && error.message ? error.message : "Could not reach smtp.gmail.com";
+    throw new Error(`Gmail SMTP failed (${code}): ${detail}`);
+  }
 }
 
 /** Sends through Lovable's Gmail connector. Used when this app is hosted on Lovable. */
